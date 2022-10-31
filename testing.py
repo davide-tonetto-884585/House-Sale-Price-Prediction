@@ -11,6 +11,12 @@ axs.plot(data['Street'], data['Sale_Price'], 'o', alpha=0.2)
 axs.set_xlabel('Street')
 axs.set_ylabel('Sale_Price')
 
+def refineData(df):
+    replace_data = {"Kitchen_Qual":{b'Poor': 0, b'Fair': 1, b'Typical': 2, b'Good': 3, b'Excellent': 4},
+                    "Utilities": {b'AllPub': 1, b'NoSewr': 2, b'NoSeWa':3, b'ELO':4},
+                    "Land_Slope": {b'Gtl': 1, b'Mod': 2, b'Sev': 3}}
+    new_data = df.replace(replace_data)
+    return new_data
 
 #data.describe()
 #data.head()
