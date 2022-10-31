@@ -12,11 +12,8 @@ axs.set_xlabel('Street')
 axs.set_ylabel('Sale_Price')
 
 def refineData(df):
-    replace_kitch = {"Kitchen_Qual":{b'Poor': 0, b'Fair': 1, b'Typical': 2, b'Good': 3, b'Excellent': 4}}
-    replace_uti = {"Utilities":{b'AllPub': 1, b'NoSewr': 2, b'NoSeWa':3}}
-#                    "Land_Slope":{b'Gtl': 0, b'Mod': 1, b'Sev': 2}}
-    new_data = df.replace(replace_data)
-    new_data = new_data.replace(replace_uti)
+    replace_kitch = {"Kitchen_Qual":{b'Poor': 0, b'Fair': 1, b'Typical': 2, b'Good': 3, b'Excellent': 4},"Utilities":{b'AllPub': 1, b'NoSewr': 2, b'NoSeWa':3}}
+    new_data = df.replace(replace_kitch)
     return new_data
 
 #data.describe()
